@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Google API</title>
+    </head>
+    <body>
+        <h1>This is ShortURLExample File 2</h1>
+        <script src="https://code.jquery.com/jquery-3.2.0.js" integrity="sha256-wPFJNIFlVY49B+CuAIrDr932XSb6Jk3J1M22M3E2ylQ=" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+            
+            /*Try makeing get request */
+            //var myURL = ('https://www.googleapis.com/urlshortener/v1/url?shortUrl=http%3A%2F%2Fgoo.gl%2FfbsS&key=AIzaSyD2sh8BZwtmELjFhqit7F1GqjvzVf9QiTo');
+            /*
+            var client = new HttpClient();
+            client.get('https://www.googleapis.com/urlshortener/v1/url?shortUrl=http%3A%2F%2Fgoo.gl%2FfbsS&key=AIzaSyD2sh8BZwtmELjFhqit7F1GqjvzVf9QiTo', function(response) {
+                // do something with response
+                console.log("hello");
+            });
+            
+            var HttpClient = function() {
+                this.get = function(aUrl, aCallback) {
+                    var anHttpRequest = new XMLHttpRequest();
+                    anHttpRequest.onreadystatechange = function() { 
+                        if (anHttpRequest.readyState == 4 && anHttpRequest.status == 200)
+                            aCallback(JSON.parse(anHttpRequest.responseText));
+                    }
+
+                    anHttpRequest.open( "GET", aUrl, true );            
+                    anHttpRequest.send( null );
+                }
+            }*/
+            
+            $.ajax({
+                url: "https://www.googleapis.com/urlshortener/v1/url?shortUrl=http%3A%2F%2Fgoo.gl%2FfbsS&key=AIzaSyD2sh8BZwtmELjFhqit7F1GqjvzVf9QiTo",
+                type: 'GET',
+                success: function(event) {
+                    console.log(event);
+                    alert(event);
+                }
+            });
+            
+            /*
+            function load() {
+                gapi.client.setApiKey('AIzaSyD2sh8BZwtmELjFhqit7F1GqjvzVf9QiTo');
+                gapi.client.load('urlshortener','v1',makeRequest);
+                
+            }
+            
+            function makeRequest() {
+                
+                function handleResponse(resp) {console.log(resp);}
+                
+                var request = gapi.client.urlshortener.url.get({
+                   'shortUrl': 'http://goo.gl/fbsS' 
+                });
+                request.execute(handleResponse);
+            }*/
+        </script>
+   </body>
+</html>
